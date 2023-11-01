@@ -1,0 +1,294 @@
+{% block content %}
+<nav class="sidebar dark_sidebar">
+    <div class="logo d-flex justify-content-between">
+    <a class="large_logo" href=" {% static 'index.html' %} "><img src=" {% static 'img/logo_white.png' %} " alt=""></a>
+    <a class="small_logo" href=" {% static 'index.html' %} "><img src=" {% static 'img/mini_logo.png' %} " alt=""></a>
+    <div class="sidebar_close_icon d-lg-none">
+    <i class="ti-close"></i>
+    </div>
+    </div>
+    <ul id="sidebar_menu" class="metismenu">
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/1.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Dashboard </span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'index_2.html' %} ">Default</a></li>
+    <li><a href=" {% static 'index_3.html' %} ">Light Sidebar</a></li>
+    <li><a href=" {% static 'index.html' %} ">Dark Sidebar</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a href=" {% static 'crypto_wallet.html' %} " aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/2.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Crypto Wallet</span>
+    </div>
+    </a>
+    </li>
+    <li class="">
+    <a href=" {% static 'buy_sell.html' %} " aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/3.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Buy &amp; Sell</span>
+    </div>
+    </a>
+    </li>
+    <li class="">
+    <a href=" {% static 'Trader_Profile.html' %} " aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/4.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Trader Profile</span>
+    </div>
+    </a>
+    </li>
+    <li class="">
+    <a href=" {% static 'crypto_stats.html' %} " aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/5.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Crypto Stats</span>
+    </div>
+    </a>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/6.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Transactions</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'Request.html' %} ">Request</a></li>
+    <li><a href=" {% static 'tan_cancel.html' %} ">Cancel</a></li>
+    <li><a href=" {% static 'Refound.html' %} ">Refound</a></li>
+    <li><a href=" {% static 'Payment_details.html' %} ">Payment details</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/7.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Tickers</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'ticker_dark.html' %} ">Ticker Dark</a></li>
+    <li><a href=" {% static 'Ticker_Light.html' %} ">Ticker Light</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/8.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Apps </span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'editor.html' %} ">Editor</a></li>
+    <li><a href=" {% static 'invoice.html' %} ">Invoice</a></li>
+    <li><a href=" {% static 'Builder.html' %} ">Builder</a></li>
+    <li><a href=" {% static 'calender.html' %} ">Calander</a></li>
+    <li><a href=" {% static 'Board.html' %} ">Board</a></li>
+    <li><a href=" {% static 'basic_card.html' %} ">Basic Card</a></li>
+    <li><a href=" {% static 'theme_card.html' %} ">Theme Card</a></li>
+    <li><a href=" {% static 'dargable_card.html' %} ">Draggable Card</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/Pages.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Pages</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'role_permissions.html' %} ">Role &amp; Permissions</a></li>
+    <li><a href=" {% static 'faq.html' %} ">FAQ</a></li>
+    <li><a href=" {% static 'login.html' %} ">Login</a></li>
+    <li><a href=" {% static 'resister.html' %} ">Register</a></li>
+    <li><a href=" {% static 'error_400.html' %} ">Error 404</a></li>
+    <li><a href=" {% static 'error_500.html' %} ">Error 500</a></li>
+    <li><a href=" {% static 'forgot_pass.html' %} ">Forgot Password</a></li>
+    <li><a href=" {% static 'gallery.html' %} ">Gallery</a></li>
+    <li><a href=" {% static 'module_setting.html' %} ">Module Setting</a></li>
+    <li><a href=" {% static 'Products.html' %} ">Products</a></li>
+    <li><a href=" {% static 'Product_Details.html' %} ">Product Details</a></li>
+    <li><a href=" {% static 'Cart.html' %} ">Cart</a></li>
+    <li><a href=" {% static 'Checkout.html' %} ">Checkout</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/General.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>General</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'Minimized_Aside.html' %} ">Minimized Aside</a></li>
+    <li><a href=" {% static 'empty_page.html' %} ">Empty page</a></li>
+    <li><a href=" {% static 'fixed_footer.html' %} ">Fixed Footer</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/Mail_Box.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Mail Box </span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'mail_box.html' %} ">Mail Box</a></li>
+    <li><a href=" {% static 'compose.html' %} ">Compose</a></li>
+    <li><a href=" {% static 'important_mail.html' %} ">Important Mail</a></li>
+    <li><a href=" {% static 'mail_trash.html' %} ">Mail Trash</a></li>
+    <li><a href=" {% static 'chat.html' %} ">Chat</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/icon.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Icons</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'Fontawesome_Icon.html' %} ">Fontawesome Icon</a></li>
+    <li><a href=" {% static 'themefy_icon.html' %} ">themefy icon</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/18.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>UI Elements </span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'colors.html' %} ">colors</a></li>
+    <li><a href=" {% static 'Alerts.html' %} ">Alerts</a></li>
+    <li><a href=" {% static 'buttons.html' %} ">Buttons</a></li>
+    <li><a href=" {% static 'modal.html' %} ">modal</a></li>
+    <li><a href=" {% static 'dropdown.html' %} ">Droopdowns</a></li>
+    <li><a href=" {% static 'Badges.html' %} ">Badges</a></li>
+    <li><a href=" {% static 'Loading_Indicators.html' %} ">Loading Indicators</a></li>
+    <li><a href=" {% static 'color_plate.html' %} ">Color Plate</a></li>
+    <li><a href=" {% static 'typography.html' %} ">Typography</a></li>
+    <li><a href=" {% static 'datepicker.html' %} ">Date Picker</a></li>
+    <li><a href=" {% static 'wow_animation.html' %} ">Animate</a></li>
+    <li><a href=" {% static 'Scroll_Reveal.html' %} ">Scroll Reveal</a></li>
+    <li><a href=" {% static 'tilt.html' %} ">Tilt Animation</a></li>
+    <li><a href=" {% static 'navs.html' %} ">Navs</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/forms.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>forms</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'Basic_Elements.html' %} ">Basic Elements</a></li>
+    <li><a href=" {% static 'Groups.html' %} ">Groups</a></li>
+    <li><a href=" {% static 'Max_Length.html' %} ">Max Length</a></li>
+    <li><a href=" {% static 'Layouts.html' %} ">Layouts</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/14.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Widgets</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'accordion.html' %} ">Accordions</a></li>
+    <li><a href=" {% static 'Scrollable.html' %} ">Scrollable</a></li>
+    <li><a href=" {% static 'notification.html' %} ">Notifications</a></li>
+    <li><a href=" {% static 'carousel.html' %} ">Carousel</a></li>
+    <li><a href=" {% static 'Pagination.html' %} ">Pagination</a></li>
+    <li><a href=" {% static 'profilebox.html' %} ">Profile Box</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/17.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Table</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'data_table.html' %} ">Data Tables</a></li>
+    <li><a href=" {% static 'bootstrap_table.html' %} ">Bootstrap</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/16.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Charts</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'chartjs.html' %} ">ChartJS</a></li>
+    <li><a href=" {% static 'apex_chart.html' %} ">Apex Charts</a></li>
+    <li><a href=" {% static 'chart_sparkline.html' %} ">Chart sparkline</a></li>
+    <li><a href=" {% static 'am_chart.html' %} ">am-charts</a></li>
+    <li><a href=" {% static 'nvd3_charts.html' %} ">nvd3 charts.</a></li>
+    </ul>
+    </li>
+    <li class="">
+    <a class="has-arrow" href="#" aria-expanded="false">
+    <div class="nav_icon_small">
+    <img src=" {% static 'img/menu-icon/map.svg' %} " alt="">
+    </div>
+    <div class="nav_title">
+    <span>Maps</span>
+    </div>
+    </a>
+    <ul class="mm-collapse">
+    <li><a href=" {% static 'mapjs.html' %} ">Maps JS</a></li>
+    <li><a href=" {% static 'vector_map.html' %} ">Vector Maps</a></li>
+    </ul>
+    </li>
+    </ul>
+    </nav>
+{% endblock content %}

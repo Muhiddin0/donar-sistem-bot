@@ -1,0 +1,107 @@
+.xabar-yuborish-container {
+    display: flex;
+    /* justify-content: ce; */
+}
+
+.xabar-yuborish {
+    margin: 0 auto;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+}
+
+.xabar-yuborish textarea {
+    width: 100%;
+    height: 250px;
+}
+.xabar-yuborish .buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.xabar-yuborish .buttons .bot-btn {
+    display: flex;
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    background-color: #0f1a34;
+    color: #fff;
+}
+.xabar-yuborish .buttons .bot-btn span{
+    position: relative;
+    cursor: pointer;
+    width: 19px;
+    height: 19px;
+}
+.xabar-yuborish .buttons .bot-btn span img {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background: #fff;
+    box-shadow: 0 0 15px 0px #333;
+    border-radius: 10px;
+    object-fit: contain;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    cursor: cell;
+    padding: 3px;
+}
+.xabar-yuborish .add{
+    padding: 5px 10px;
+    border-radius: 30px;
+    border: 2px solid #00ff2b;
+    color: #00ff2b;
+    cursor: pointer;
+    order: 2;
+}
+
+
+
+.new-btn-wraper, .edit-btn-wraper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 500px;
+    padding: 1rem .6em;
+    border-radius: 10px;
+    background: #0f1a34;
+    box-shadow: 0 0 50px 0px #333;
+    padding: 1rem;
+    /* dynamic */
+    display: none;
+}
+.new-btn-wraper.active, .edit-btn-wraper.active {
+    display: flex;
+}
+.btn-save {
+    align-self: flex-end;
+}
+.new-btn-wraper input, .edit-btn-wraper input {
+    width: 100%;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    padding: 7px;
+    background-color: #4a5777;
+    color: #fff;
+}
+.closed-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+}

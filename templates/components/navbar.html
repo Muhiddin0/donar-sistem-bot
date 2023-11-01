@@ -1,0 +1,42 @@
+{% load static %}
+
+<nav class="sidebar dark_sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a class="large_logo" href=" {% static 'index.html' %} "><img src=" {% static 'img/logo_white.png' %} "
+                alt=""></a>
+        <a class="small_logo" href=" {% static 'index.html' %} "><img src=" {% static 'img/mini_logo.png' %} "
+                alt=""></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="ti-close"></i>
+        </div>
+    </div>
+    <ul id="sidebar_menu" class="metismenu">
+        <li class="">
+            <a class=" nav_title" href="{% url 'index:index' %}" aria-expanded="true">
+                <img src=" {% static 'img/menu-icon/1.svg' %} " alt=""> Dashboard
+            </a>
+        </li>
+        <li class="">
+            <a class="nav_title" href="{% url 'index:xabar_yuborish' %}" aria-expanded="true">
+                <img src=" {% static 'img/menu-icon/Mail_Box.svg' %} " alt=""> Xabar yuborish
+            </a>
+        </li>
+
+        <!-- <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <div class="nav_icon_small">
+                    <img src=" {% static 'img/menu-icon/forms.svg' %} " alt="">
+                </div>
+                <div class="nav_title">
+                    <span>forms</span>
+                </div>
+            </a>
+            <ul class="mm-collapse">
+                <li><a href=" {% static 'Basic_Elements.html' %} ">Basic Elements</a></li>
+                <li><a href=" {% static 'Groups.html' %} ">Groups</a></li>
+                <li><a href=" {% static 'Max_Length.html' %} ">Max Length</a></li>
+                <li><a href=" {% static 'Layouts.html' %} ">Layouts</a></li>
+            </ul>
+        </li> -->
+    </ul>
+</nav>
