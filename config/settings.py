@@ -8,7 +8,7 @@ BOT_TOKEN = env.str("BOT_TOKEN")
 ADMIN = 5884447415
 API_ID = 18349141
 API_HASH = 'fa3a10f79ac5765fa9cd9a977a1923d3'
-BOT_TOKEN = '6321342450:AAG2nU399z25aDMF-YYTz0roRc2wERY8LC8'
+BOT_TOKEN = '5894652235:AAE9I0CAKJhF1ltt5s7KytgNB2hvqhn5JGI'
 
 
 
@@ -37,12 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     
-    
     'bot',
-    'tbot',
     'index',
-    
-    
+    'user',
+
     'crispy_forms',
     'crispy_bootstrap5',
     'django_async_orm',

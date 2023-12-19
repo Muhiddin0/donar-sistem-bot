@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Xabar Yuborish
+{% endblock title %}
+
+{% block content %}
+<section>
+  <div class="table-responsive">
+    <table class="table  ">
+      <thead>
+        <tr>
+          <th>Исми</th>
+          <th>телефони</th>
+          <th>унвони</th>
+          <th>Вилояти</th>
+          <th>Ташкилоти</th>
+          <th>ид</th>
+          <!-- <th>бошқариш</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.position }}</td>
+          <td>{{ user.region }}</td>
+          <td>{{ user.organizations }}</td>
+          <td>{{ user.user_id }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container xabar-yuborish-container pt-5 pb-5">
+    <form class="xabar-yuborish" action="" onsubmit="send_message()">{% csrf_token %}
+      <input type="file" name="content" id="content">
+      <textarea name="captions" id="captions" cols="30" rows="10"></textarea>
+      <div class="buttons"></div>
+      <div class="d-flex gap-4">
+        <button type="button" class="add" id="add" onclick="add_wraper()">+ Add</button>
+        <button class="btn btn-success btn-small" type="submit">Submit</button>
+      </div>
+    </form>
+
+  </div>
+</section>
+{% endblock content %}

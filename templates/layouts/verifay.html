@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+
+<style>
+    form.filter {
+        margin: 30px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: baseline;
+        align-items: center;
+        gap: 20px;
+    }
+</style>
+
+
+<div class="main_content_iner overly_inner ">
+    <div class="white_card mb_30 card_height_100">
+        <div class="white_card_body pt-0">
+            <div class="QA_section">
+                <div class="QA_table mb-0 transaction-table">
+
+                    <div class="table-responsive">
+                        <h3>So'rov yuborganlar</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Исми</th>
+                                    <th>телефони</th>
+                                    <th>унвони</th>
+                                    <th>Вилояти</th>
+                                    <th>Ташкилоти</th>
+                                    <th>ид</th>
+                                    <th>бошқариш</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for tuser in tusers %}
+                                <tr class="table-item-{{tuser.id}}">
+                                    <td>{{ tuser.name }}</td>
+                                    <td>{{ tuser.phone }}</td>
+                                    <td>{{ tuser.position }}</td>
+                                    <td>{{ tuser.region }}</td>
+                                    <td>{{ tuser.organizations }}</td>
+                                    <td>{{ tuser.user_id }}</td>
+                                    <td>
+
+                                        <button tid="{{ tuser.id }}" tstatus="accept" onclick="changeUser(event)"
+                                            class="btn btn-info">Accept</button>
+                                        <button tid="{{ tuser.id }}" tstatus="reject" onclick="changeUser(event)"
+                                            class="btn btn-danger">Reject</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="table-responsive">
+                        <h3>Rad etilganlar</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Исми</th>
+                                    <th>телефони</th>
+                                    <th>унвони</th>
+                                    <th>Вилояти</th>
+                                    <th>Ташкилоти</th>
+                                    <th>ид</th>
+                                    <th>бошқариш</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for rusers in rejects %}
+                                <tr class="table-item-{{tuser.id}}">
+                                    <td>{{ rusers.name }}</td>
+                                    <td>{{ rusers.phone }}</td>
+                                    <td>{{ rusers.position }}</td>
+                                    <td>{{ rusers.region }}</td>
+                                    <td>{{ rusers.organizations }}</td>
+                                    <td>{{ rusers.user_id }}</td>
+                                    <td>
+                                        <button tid="{{ rusers.id }}" tstatus="accept" onclick="changeUser(event)"
+                                            class="btn btn-info">Accept</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function changeUser(event) {
+        const btn = event.target
+        const id = btn.getAttribute('tid')
+        const status = btn.getAttribute('tstatus')
+        let data = new FormData(); // 2
+
+        data.append("id", id)
+        data.append("status", status)
+        data.append("csrfmiddlewaretoken", '{{csrf_token}}') // 3
+
+        axios.post('', data) // 4
+            .then(res =>
+                btn.parentElement.parentElement.style = "display: none;"
+            ) // 5
+            .catch(errors => console.log(errors)) // 6
+    }
+</script>
+
+{% endblock content %}

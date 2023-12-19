@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Xabar Yuborish
+{% endblock title %}
+{% block content %}
+
+<style>
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+
+  .send-message {
+    display: none;
+    position: absolute;
+    z-index: 1000000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000000b0;
+    backdrop-filter: blur(10px);
+  }
+
+  .send-message.active {
+    display: flex;
+  }
+
+  .send-message .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    min-height: 100vh;
+  }
+
+  .send-message .container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    width: 500px;
+  }
+
+  .send-message .container form input {
+    width: 100%;
+  }
+
+  .send-message .container form textarea {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .my-btn-group {
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-end;
+  }
+</style>
+
+<section class="send-message">
+  <div class="container">
+    <form action="">
+      <input id="file-input" type="file">
+      <textarea placeholder="Xabarni yoki xabar uchun captioni kiriting"></textarea>
+      <div class="my-btn-group">
+        <button onclick="send_message()" type="button">Submit</button>
+        <button onclick="toggleSendMessageForm()" type="button">Cance</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="table-responsive">
+    <div class="container filter-header">
+      <a href="{% url 'index:index' %}">Back</a>
+      <a onclick="toggleSendMessageForm()" class="btn btn-info text-white">Xabar yuborish</a>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Исми</th>
+          <th>телефони</th>
+          <th>унвони</th>
+          <th>Вилояти</th>
+          <th>Ташкилоти</th>
+          <th>ид</th>
+          <th>бошқариш</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% if users %}
+        {% for user in users %}
+        <tr class="user-tr" data-tr="{{ user.id }}">
+          <td>{{ user.name }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.position }}</td>
+          <td>{{ user.region }}</td>
+          <td>{{ user.organizations }}</td>
+          <td>{{ user.user_id }}</td>
+          <td>
+            <a href="{% url 'index:details' user.pk %}">details</a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<script>
+
+  function toggleSendMessageForm() {
+    document.querySelector('.send-message').classList.toggle('active')
+  }
+  function send_message() {
+
+    toggleSendMessageForm()
+
+    let data = new FormData(); // 2
+
+    let users_tr = document.querySelectorAll('.user-tr')
+    let userDataJson = []
+
+    for (let i = 0; i < users_tr.length; i++) {
+      let user_id = users_tr[i].getAttribute('data-tr')
+      userDataJson.push(user_id)
+    }
+
+    let file_input = document.querySelector('#file-input')
+    data.append('content', file_input.files[0])
+    let textarea = document.querySelector('textarea')
+
+    data.append('text', textarea.value)
+    data.append("users", JSON.stringify(userDataJson)) // 3
+    data.append("csrfmiddlewaretoken", '{{csrf_token}}') // 3
+
+    axios.post('{% url "index:send_filter" %}', data)
+      .then(res => console.log(res))
+      .catch(errors => console.log(errors))
+  }
+</script>
+{% endblock content %}

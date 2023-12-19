@@ -1,1 +1,1 @@
-from . import start, aloqa, account, aloqa, contact, monneyTransfer, getvoice, ovozberish, cancel, referal, channel_check
+from . import start, set_fullname, set_phone, set_regiter, set_region, set_organization, set_position
