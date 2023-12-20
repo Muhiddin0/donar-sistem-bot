@@ -15,7 +15,7 @@ Xabar Yuborish
       <div class="buttons"></div>
       <div class="d-flex gap-4">
         <button type="button" class="add" id="add" onclick="add_wraper()">+ Add</button>
-        <button class="btn btn-success btn-small" type="submit">Submit</button>
+        <button onclick="procces()" class="btn btn-success btn-small" type="submit">Submit</button>
       </div>
     </form>
 
@@ -35,4 +35,9 @@ Xabar Yuborish
     </div>
   </div>
 </section>
-{% endblock content %}
+<script>
+  function procces() {
+    alert('xabr yuborilmoda...')
+  }
+</script>
+{% endblock %}
