@@ -196,13 +196,13 @@ def details(request, pk):
         })
         send_message_task.start()
             
-
 def xabr_yuborish(request):
 
     if request.method == "GET":
         return render(request, 'layouts/xabar_yuborish.html')
     
     if request.method == 'POST':
+        
         
         file  = request.FILES.get('content')
         message = request.POST.get('text')
@@ -217,6 +217,7 @@ def xabr_yuborish(request):
             "name":name,
             "message":message,
         })
+        
         send_message_task.start()
             
         messages.info(request, 'Xabar yuborilmoqda...')

@@ -114,7 +114,8 @@ const send_message = () => {
   formDate.append("text", text_input.value);
 
   // Fetch
-  let r = fetch("http://185.252.233.37/xabar-yuborish", {
+  // http://185.252.233.37/xabar-yuborish
+  let r = fetch("/", {
     method: "POST",
     credentials: "same-origin",
     headers: {
