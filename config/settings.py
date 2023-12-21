@@ -79,8 +79,8 @@ TEMPLATES = [
     },
 ]
 CORS_ALLOWED_ORIGINS = [
-    "*",
-    'https://interbroilerbot.uz'
+    'https://interbroilerbot.uz',
+    "http://185.252.233.37:8080"
 ]
 
 ASGI_APPLICATION = 'config.asgi.application'
