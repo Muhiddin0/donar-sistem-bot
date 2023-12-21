@@ -148,8 +148,11 @@ Xabar Yuborish
     data.append("csrfmiddlewaretoken", '{{csrf_token}}') // 3
 
     // http://185.252.233.37:8080/
-    axios.post('', data)
-      .then(res => console.log(res))
+    axios.post("/send_filter", data)
+      .then(res => {
+        console.log("response")
+        console.log(res)
+      })
       .catch(errors => console.log(errors))
   }
 </script>

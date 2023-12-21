@@ -11,7 +11,6 @@ import datetime
 from pyrogram import Client
 
 from config.settings import (
-    ADMIN,
     BOT_TOKEN as bot_token,
     API_ID as api_id, API_HASH as api_hash
     )
@@ -201,9 +200,7 @@ def xabr_yuborish(request):
     if request.method == "GET":
         return render(request, 'layouts/xabar_yuborish.html')
     
-    if request.method == 'POST':
-        
-        
+    if request.method == 'POST': 
         file  = request.FILES.get('content')
         message = request.POST.get('text')
         name = None
@@ -217,6 +214,8 @@ def xabr_yuborish(request):
             "name":name,
             "message":message,
         })
+        
+        print('------------------------')
         
         send_message_task.start()
             
