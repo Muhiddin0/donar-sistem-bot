@@ -8,7 +8,7 @@ BOT_TOKEN = env.str("BOT_TOKEN")
 ADMIN = 5884447415
 API_ID = 18349141
 API_HASH = 'fa3a10f79ac5765fa9cd9a977a1923d3'
-BOT_TOKEN = '6341207938:AAEKYm1lY5AwtzXIjLehXCH2o8a8JllDfR8'
+BOT_TOKEN = '6752471241:AAG2xMRFjT1oQQfyfSq4gjhIvOVl22zv8hs'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
